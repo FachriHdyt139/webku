@@ -1,0 +1,148 @@
+/* Reset dan dasar styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url('images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    overflow-y: scroll;  /* Mengizinkan scroll */
+}
+
+/* Emoji container */
+#emoji-container span {
+    opacity: 0;
+    animation: float 5s ease-in-out forwards;
+}
+
+/* Efek animasi untuk emoji terbang ke atas */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500px);
+        opacity: 0;
+    }
+}
+
+/* Kontainer utama */
+.container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 850px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 2s ease-out;
+    overflow: hidden;  /* Mencegah overflow yang menghalangi scroll */
+}
+
+/* Animasi fadeIn untuk kontainer */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: #ff8c00;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+}
+
+.romantic-text {
+    font-size: 1.4em;
+    margin: 20px 0;
+    line-height: 1.8em;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    margin-top: 30px;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.slider {
+    display: block;
+    position: relative;
+}
+
+.slide {
+    display: none;  /* Mulai dengan gambar disembunyikan */
+    width: 100%;
+    height: auto;
+}
+
+.slide img {
+    max-width: 100%;  /* Pastikan gambar tidak melebar lebih dari ukuran slider */
+    height: auto;     /* Jaga agar gambar proporsional */
+    object-fit: contain;  /* Gambar akan disesuaikan dengan ukuran slider tanpa terpotong */
+}
+
+/* Dot navigation */
+.dots-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+/* Efek fadeIn untuk gambar */
+@keyframes fadeInSlide {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .romantic-text {
+        font-size: 1.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .slider-container {
+        max-width: 100%;
+    }
+}
